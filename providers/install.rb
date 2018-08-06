@@ -49,8 +49,11 @@ end
 
 def download
   Chef::Log.info("Downloading redis tarball from #{new_resource.download_url}")
-  remote_file "#{new_resource.download_dir}/#{@tarball}" do
-    source new_resource.download_url
+  # remote_file "#{new_resource.download_dir}/#{@tarball}" do
+  #   source new_resource.download_url
+  # end
+  cookbook_file "#{new_resource.download_dir}/#{@tarball}" do
+    source "redis-2.8.20.tar.gz"
   end
 end
 
