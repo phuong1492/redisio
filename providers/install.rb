@@ -53,7 +53,7 @@ def download
   #   source new_resource.download_url
   # end
   cookbook_file "#{new_resource.download_dir}/#{@tarball}" do
-    source "redis-2.8.20.tar.gz"
+    source "redis-5.0.5.tar.gz"
   end
 end
 
